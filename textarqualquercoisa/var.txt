@@ -1,0 +1,14 @@
+
+Conexäes ativas
+
+  Proto  Endere‡o local         Endere‡o externo       Estado
+  TCP    10.0.135.14:50801      server-52-84-77-33:https  ESTABLISHED
+  TCP    10.0.135.14:50838      162.125.5.3:https      CLOSE_WAIT
+  TCP    10.0.135.14:50876      ieonlinews:https       ESTABLISHED
+  TCP    10.0.135.14:50905      a-0001:https           ESTABLISHED
+  TCP    10.0.135.14:50943      162.125.5.3:https      LAST_ACK
+  TCP    10.0.135.14:50978      a104-79-207-39:https   ESTABLISHED
+  TCP    10.0.135.14:50983      131.253.61.96:https    ESTABLISHED
+  TCP    10.0.135.14:50984      13.107.21.200:https    ESTABLISHED
+  TCP    10.0.135.14:50987      13.107.21.200:https    ESTABLISHED
+  TCP    10.0.135.14:50991      13.107.21.200:https    ESTABLISHED

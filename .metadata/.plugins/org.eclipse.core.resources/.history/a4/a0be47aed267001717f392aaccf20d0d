@@ -1,0 +1,200 @@
+package Pesquisaproject;
+import java.io.*;
+import java.util.*;
+
+
+import org.omg.CORBA.Request;
+
+import java.net.*;
+
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+
+public class Pesqproject {
+
+	public static void main(String[] args)   {
+		
+		try {
+		      // Obtem o endereco da maquina local, associando ao
+		      // objeto "myself".  Observe que esse objeto nao e' 
+		      // criado por um construtor, mas sim retornado por
+		      // um metodo estatico da classe.
+		      InetAddress host1 = InetAddress.getLocalHost();
+		      InetAddress host2 =InetAddress.getByName("DESKTOP-3DS0N");
+		    //  byte[] addr = {10,0,2,15};
+		     
+		     // InetAddress otherHost = InetAddress.getByAddress(addr);
+		   //   System.out.println(InetAddress.getByAddress(addr).getHostName());
+		      // Uma vez que um objeto InetAddress esteja disponivel,
+		      // os metodos getHostName() e  getHostAddress() podem
+		      // ser aplicados ao objeto para obter a representacao 
+		      // simbolica e numerica do endereco IP, respectivamente
+		      InetAddress address = InetAddress.getByName("216.58.202.228"); 
+		      System.out.println(address.getHostAddress());
+		      System.out.println(address.getHostName());
+		     // InetAddress addres = InetAddress.getByName("10.0.25."); 
+		 //     System.out.println(addres.getHostAddress());
+		   //   System.out.println(addres.getHostName());
+		      InetAddress and = InetAddress.getByName("www.google.com"); 
+		      System.out.println(and.getHostAddress());
+		      System.out.println(and.getHostName());
+		       
+		      
+		      NetworkInterface netInter = NetworkInterface.getByInetAddress( host1 );
+		      System.out.println("hh"+netInter.getDisplayName());
+		      byte[] macAddressBytes = netInter.getHardwareAddress();
+		      
+		      String macAddress =  String.format ( "%1$02x-%2$02x-%3$02x-%4$02x-%5$02x-%6$02x",
+		      macAddressBytes[0], macAddressBytes[1],
+		      macAddressBytes[2], macAddressBytes[3],
+		      macAddressBytes[4], macAddressBytes[5] ).toUpperCase();
+		   
+		      System.out.println("mac "+macAddress	);		      
+		   
+		     // System.out.println("00  "+InetAddress.getByAddress(addr));
+		      System.out.println("Host Local1 " + host1.getHostName());
+		      System.out.println(" ip do Host1 " + host1.getHostAddress());
+		     
+		      System.out.println(" ip2  " + host2.getHostName());
+		      System.out.println("teste2 "+host2.getCanonicalHostName()+"///"+host2);
+		    }catch (Exception end){System.out.println(""+end.getMessage());}
+		    
+		 	
+		/* int count = 0;
+		    InetAddress otherHost;
+		    while (count < 10) {
+		      // Metodo estatico getByName() retorna um objeto InetAddress
+		      // associado ao endereco da maquina cujo nome (formato simbolico 
+		      // ou numerico) foi especificado como argumento.  Pode gerar uma
+		      // excecao caso o nao seja possivel determinar esse endereco.
+		      try{
+			otherHost = InetAddress.getByName(args[count]);
+			System.out.println("Host " + otherHost.getHostName() + 
+					   " is at IP address " + otherHost.getHostAddress());
+		     
+		    }catch (Exception end){System.out.println(""+end.getMessage());}
+		      count++;
+		    }*/
+		 
+		 try{
+			 InetAddress aand;
+		 for (int i = 1; i < 256; i++) {
+			    if (InetAddress.getByName("10.0.135." + i).isReachable(1000)){
+			        aand = InetAddress.getByName("10.0.135." + i); 
+			       System.out.println("" +aand);
+			       
+			    }
+			}
+		 }catch (Exception end){System.out.println(""+end.getMessage());}
+		 
+		 try{
+	//	 Enumeration <NetworkInterfac> e = NetworkInterface.getNetworkInterfaces();
+		 List <InetAddress> end1 = new ArrayList <InetAddress>();
+		 InetAddress var =InetAddress.getByName("DESKTOP-3DS0N");
+		 NetworkInterface end=NetworkInterface.getByInetAddress(var);
+		// end1.add(end.getInterfaceAddresses());
+		 List <InterfaceAddress> valuee = new ArrayList <InterfaceAddress>();
+		 valuee = end.getInterfaceAddresses();
+		 for (int i=0;i<valuee.size();i++) {
+			System.out.println(valuee.get(i)); 
+		 }
+		 System.out.println("123"+end.getName());
+		// System.out.println("123"+vant.toString());
+		 }catch (Exception end){System.out.println(""+end.getMessage());}
+		 
+		    try{
+		   URL url = new URL("https://www.google.com.br/");
+		
+		    URLConnection c = url.openConnection();  // Get URLConnection from the URL
+		    c.connect();                             // Open a connection to the URL
+		    
+		    // Display some information about the URL contents
+		    System.out.println("  Content Type: " + c.getContentType());
+		    System.out.println("  Content Encoding: " + c.getContentEncoding());
+		    System.out.println("  Content Length: " + c.getConnectTimeout());
+		    System.out.println("  Date: " + new Date(c.getDate()));
+		    System.out.println("  Last Modified: " + new Date(c.getLastModified()));
+		    System.out.println("  Expiration: " + new Date(c.getExpiration()));
+
+		    // If it is an HTTP connection, display some additional information.
+		    if (c instanceof HttpServletRequest) {
+		    	HttpServletRequest h = (HttpServletRequest) c;
+		      System.out.println("  Request Method: " + h.getServerName());
+		      System.out.println("  Response Message: " + h.getServletPath());
+		      System.out.println("  Response Code: " + h.getRequestURL());
+		    }
+		    }catch (Exception util){System.out.println(""+util.getMessage());}
+		     
+		    
+		
+		  
+		  /** Create a URL object, call printinfo() to display information about it. */
+		     
+		    
+		    	
+		    
+		      try{
+		            URL oracle = new URL("http://www.oracle.com/");
+		            URLConnection yc = oracle.openConnection();
+		            BufferedReader in = new BufferedReader(new InputStreamReader(
+		                                        yc.getInputStream()));
+		            String inputLine;
+		            while ((inputLine = in.readLine()) != null) 
+		                System.out.println(inputLine);
+		            in.close();
+                  }catch (Exception util){System.out.println(""+util.getMessage());}
+		  
+		
+		     /* try {
+		          // Instancia o ServerSocket ouvindo a porta 12345
+		          ServerSocket servidor = new ServerSocket(12345);
+		          System.out.println("Servidor ouvindo a porta 12345");
+		          while(true) {
+		            // o método accept() bloqueia a execução até que
+		            // o servidor receba um pedido de conexão
+		            Socket cliente = servidor.accept();
+		            System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
+		            ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
+		            saida.flush();
+		            saida.writeObject(new Date());
+		            saida.close();
+		            cliente.close();
+		            servidor.close();
+		          }  
+		        }   
+		        catch(Exception e) {
+		           System.out.println("Erro: " + e.getMessage());
+		        }*/
+		          
+		          String  vant = HttpServletRequest.BASIC_AUTH ;
+		          System.out.println(""+vant);
+		      
+		        //  System.out.println(""+vant.getRequestURL());
+		        //  HttpServletRequest request = new HttpServletRequest;
+	
+	
+	}
+	public class OiMundo extends HttpServlet {
+	    public void service (HttpServletRequest request,
+	            HttpServletResponse response)
+	            throws ServletException, IOException {
+	        PrintWriter out = response.getWriter();
+
+	        // escreve o texto
+	        out.println("<html>");
+	        out.println("<body>");
+	        out.println("Primeira servlet");
+	        out.println("</body>");
+	        out.println("</html>");
+	    }
+	}
+		      
+		      
+		      
+	}
+	
+
+

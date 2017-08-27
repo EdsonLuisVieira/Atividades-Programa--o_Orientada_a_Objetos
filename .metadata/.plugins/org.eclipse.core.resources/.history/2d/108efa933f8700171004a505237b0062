@@ -1,0 +1,27 @@
+package textarqualquercoisa;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.Scanner;
+
+public class qqcoisa {
+	Properties p = System.getProperties();
+	so	= p.getProperty("os.name");
+	versao	= p.getProperty("os.version");
+	try {
+		InetAddress h = InetAddress.getLocalHost();
+		String ip = h.getHostAddress();
+		String host = h.getHostName();
+		byte[] macBytes  = NetworkInterface.getByInetAddress(h).getHardwareAddress();
+	  String 	mac = String.format ("%1$02x-%2$02x-%3$02x-%4$02x-%5$02x-%6$02x", macBytes[0], macBytes[1], macBytes[2], macBytes[3], macBytes[4], macBytes[5] ).toUpperCase();
+	} catch (Exception e){ 
+		String ip 	 = new String("0.0.0.0");
+	String 	host = new String("Falha");
+	String 	mac	 = new String("00-00-00-00-00-00");
+	}
+	
+	
+	
+}

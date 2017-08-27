@@ -1,0 +1,38 @@
+
+Conexäes ativas
+
+  Proto  Endere‡o local         Endere‡o externo       Estado
+  TCP    10.0.2.180:5434        DESKTOP-3DS0N:51026    ESTABLISHED
+  TCP    10.0.2.180:49393       a104-105-140-35:https  CLOSE_WAIT
+  TCP    10.0.2.180:49394       a104-105-140-35:https  CLOSE_WAIT
+  TCP    10.0.2.180:49395       177-128-223-186:http   CLOSE_WAIT
+  TCP    127.0.0.1:49155        localhost127:49156     ESTABLISHED
+  TCP    127.0.0.1:49156        localhost127:49155     ESTABLISHED
+  TCP    127.0.0.1:49169        localhost127:49170     ESTABLISHED
+  TCP    127.0.0.1:49170        localhost127:49169     ESTABLISHED
+  TCP    127.0.0.1:49172        localhost127:49173     ESTABLISHED
+  TCP    127.0.0.1:49173        localhost127:49172     ESTABLISHED
+  TCP    127.0.0.1:49180        localhost127:49181     ESTABLISHED
+  TCP    127.0.0.1:49181        localhost127:49180     ESTABLISHED
+  TCP    127.0.0.1:49182        localhost127:49183     ESTABLISHED
+  TCP    127.0.0.1:49183        localhost127:49182     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49189     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49204     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49205     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49206     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49207     ESTABLISHED
+  TCP    127.0.0.1:49184        localhost127:49294     ESTABLISHED
+  TCP    127.0.0.1:49189        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:49190        localhost127:49191     ESTABLISHED
+  TCP    127.0.0.1:49191        localhost127:49190     ESTABLISHED
+  TCP    127.0.0.1:49192        localhost127:49193     ESTABLISHED
+  TCP    127.0.0.1:49193        localhost127:49192     ESTABLISHED
+  TCP    127.0.0.1:49194        localhost127:61900     ESTABLISHED
+  TCP    127.0.0.1:49195        localhost127:49196     ESTABLISHED
+  TCP    127.0.0.1:49196        localhost127:49195     ESTABLISHED
+  TCP    127.0.0.1:49204        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:49205        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:49206        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:49207        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:49294        localhost127:49184     ESTABLISHED
+  TCP    127.0.0.1:61900        localhost127:49194     ESTABLISHED

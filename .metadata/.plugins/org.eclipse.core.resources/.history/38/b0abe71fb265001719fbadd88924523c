@@ -1,0 +1,30 @@
+package Pesquisaproject;
+import java.net.InetAddress;
+import java.io.*;
+
+public class Pesqproject {
+
+	public static void main(String[] args) {
+		 try {
+		      // Obtem o endereco da maquina local, associando ao
+		      // objeto "myself".  Observe que esse objeto nao e' 
+		      // criado por um construtor, mas sim retornado por
+		      // um metodo estatico da classe.
+		      InetAddress myself = InetAddress.getLocalHost();
+
+		      // Uma vez que um objeto InetAddress esteja disponivel,
+		      // os metodos getHostName() e  getHostAddress() podem
+		      // ser aplicados ao objeto para obter a representacao 
+		      // simbolica e numerica do endereco IP, respectivamente
+		      System.out.println("Local host is " + myself.getHostName() + 
+					 " at IP address " + myself.getHostAddress());
+		    }catch (Exception end){System.out.println(""+end.getMessage());}
+		    
+		
+		
+		
+	}
+
+	
+}
+

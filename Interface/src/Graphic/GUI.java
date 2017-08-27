@@ -1,0 +1,21 @@
+package Graphic;
+import javax.accessibility.*;
+import javax.swing.*;
+
+public class GUI {
+
+	public static void main(String[] args) {
+		
+		int valorA = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor A: "));
+		int valorB = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor B: "));
+		
+	
+		if (valorA==valorB){
+			JOptionPane.showMessageDialog(null,"valores iguais","",JOptionPane.PLAIN_MESSAGE);
+		}else{
+			JOptionPane.showMessageDialog(null,"valores diferentes","",JOptionPane.ERROR);
+		}
+
+	}
+
+}

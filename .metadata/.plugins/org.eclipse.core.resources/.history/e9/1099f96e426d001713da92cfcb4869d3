@@ -1,0 +1,110 @@
+package receberpng;
+
+import java.net.*;
+
+import javax.imageio.ImageIO;
+
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.*;
+
+
+public class getpng {
+
+	public static void main(String[] args) throws IOException {
+		
+		//enviarPrint();
+		//receberPrint();
+		//txtprofessor();
+		
+	}	
+	
+	
+	public static void enviarPrint(){
+		try {
+		    // cria o nosso socket
+			System.out.println("entrou");
+		    ServerSocket servsock = new ServerSocket(5051);
+		    Robot robot = new Robot();
+		    Dimension d= Toolkit.getDefaultToolkit().getScreenSize();
+		    while (true) {
+		      Socket sock = servsock.accept();
+		      System.out.println("Conexão aceita: " + sock);
+		      BufferedImage bi = robot.createScreenCapture(new // Captura a tela na àrea definida pelo retângulo
+		      Rectangle(0, 0, d.width, d.height)); // aqui vc configura as posições xy e o tam da área que quer capturar
+		      ImageIO.write(bi, "png", new File("4.png"));// Salva a imagem
+		      // envia o arquivo (transforma em byte array)
+		      File myFile = new File ("4.png");
+		      byte [] mybytearray  = new byte [(int)myFile.length()];
+		      FileInputStream fis = new FileInputStream(myFile);
+		      BufferedInputStream bis = new BufferedInputStream(fis);
+		      bis.read(mybytearray,0,mybytearray.length);
+		      OutputStream os = sock.getOutputStream();
+		      System.out.println("Enviando...");
+		      os.write(mybytearray,0,mybytearray.length);
+		      os.flush();
+		      sock.close();
+		      }
+		    
+		}catch(Exception ioe) {System.out.println(ioe.getMessage());}
+   }	
+		
+	public static void receberPrint() {	
+		
+			try {  
+				System.out.println("entrou2");
+		int filesize=6022386;
+	    long start = System.currentTimeMillis();
+	    int bytesRead;
+	    int current = 0;
+	    Socket sock = new Socket("10.0.25.141",5050);
+	    // recebendo o arquivo
+	    byte [] mybytearray  = new byte [filesize];
+	    InputStream is = sock.getInputStream();
+	    FileOutputStream fos = new FileOutputStream("tentando.png");
+	    BufferedOutputStream bos = new BufferedOutputStream(fos);
+	    bytesRead = is.read(mybytearray,0,mybytearray.length);
+	    current = bytesRead;
+	    do {
+	       bytesRead =
+	          is.read(mybytearray, current, (mybytearray.length-current));
+	       if(bytesRead >= 0) current += bytesRead;
+	    } while(bytesRead > -1);
+	    bos.write(mybytearray, 0 , current);
+	    long end = System.currentTimeMillis();
+	    System.out.println(end-start);
+	    bos.close();
+	    sock.close();
+		}catch (Exception e){} 
+	}
+			
+		public static void txtprofessor() throws IOException {
+			
+			BufferedReader inputStream = null;
+		      PrintWriter outputStream = null;
+		 
+		      try {
+		         inputStream = new BufferedReader(new FileReader("edson.txt"));
+		         outputStream = new PrintWriter(new BufferedWriter(new FileWriter("linesoutput.txt")));
+		 
+		         String line;
+		         while ((line = inputStream.readLine()) != null) {
+		            outputStream.println(line);
+		         }
+		      } finally {
+		         if (inputStream != null) {
+		            inputStream.close();
+		         }
+		         if (outputStream != null) {
+		            outputStream.close();
+		         }
+		      }
+			
+		}
+		
+	
+	
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Edson/eclipse/jee-oxygen/eclipse/servlet-3_0-final-jar_and_schema/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Edson/Documents/servlet-3_0-final-jar_and_schema/javax.servlet.jsp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

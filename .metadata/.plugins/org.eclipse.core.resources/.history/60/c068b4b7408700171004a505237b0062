@@ -1,0 +1,14 @@
+package textarqualquercoisa;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.Scanner;
+
+public class qqcoisa {
+	
+
+	
+	
+}

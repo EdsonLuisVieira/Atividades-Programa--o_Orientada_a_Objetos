@@ -1,0 +1,57 @@
+package textarqualquercoisa;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.Socket;
+import java.util.List;
+import java.util.Properties;
+import java.lang.*;
+
+
+
+
+public class teste {
+
+	public static void main(String[] args) throws Exception {
+		
+	
+		Properties p = System.getProperties();
+		String so	= p.getProperty("os.name");
+		String versao	= p.getProperty("os.version");
+		String ip;
+		String host;
+		String 	mac;
+		try {
+			InetAddress h = InetAddress.getLocalHost();
+			 ip = h.getHostAddress();
+			 host = h.getHostName();
+			byte[] macBytes  = NetworkInterface.getByInetAddress(h).getHardwareAddress();
+		   	mac = String.format ("%1$02x-%2$02x-%3$02x-%4$02x-%5$02x-%6$02x", macBytes[0], macBytes[1], macBytes[2], macBytes[3], macBytes[4], macBytes[5] ).toUpperCase();
+		} catch (Exception e){ 
+			ip 	 = new String("0.0.0.0");
+		host = new String("Falha");
+		 	mac	 = new String("00-00-00-00-00-00");
+		}
+		
+		System.out.println(versao);// +"\n"+ p +"\n"+versao +"\n"+ip +"\n"+host +"\n"+ mac +"\n"+ host+"\n");
+	
+		
+	}
+	
+
+}
